@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>군 병원 찾기</title>
+</head>
+{% load static %}
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    li{
+        list-style: none;
+    }
+    .wrap{
+        display: flex;
+        width: 100vw;
+        height: 100vh;
+        background: #eee;
+    }
+    .contents{
+        width: 80vw;
+        height: 90vh;
+        background: #fff;
+        border-radius: 25px;
+        position: absolute; top:5vh; right:3vw;
+    }
+    .menubar{
+        width: 8vw;
+        height: 90vh;
+        background: #fff;
+        border-radius: 25px;
+        position: absolute; top:5vh; left:3vw;
+    }
+    .menubar h2{
+        text-align: center;
+        color:#2757FF;
+        font-size: 40px;
+        padding: 5px;
+        margin-top: 30px;
+    }
+    .menubar li{
+        text-align: center;
+        margin-top: 40px;
+        padding: 10px;
+    }
+    .menubar li:nth-child(1){
+       margin-top: 100px;
+    }
+    #map {
+       width: 75vw;
+       height: 80vh;
+       position: absolute; top: 5vh; left: 2.5vw;
+       border-radius: 25px;
+    }
+    .img{
+        width: 45px;
+    }
+    .sel_img{
+        width: 45px;
+        background: #4b71f9;
+        border-radius: 10px;
+    }
+</style>
+<body>
+    <div class="wrap">
+        <div class="menubar">
+            <h2>n</h2>
+            <ul>
+                <li><a href="#"><img src="{% static 'imgs/Chatbot.png' %}" alt="bot1" class="img"></a></li>
+                <li><a href="#"><img src="{% static 'imgs/Magnifier.png' %}" alt="bot2" class="img"></a></li>
+                <li><a href="#"><img src="{% static 'imgs/hospital.png' %}" alt="bo3" class="sel_img"></a></li>
+            </ul>
+        </div>
+        <div class="contents">
+            <div id="map"></div>
+        </div>
+    </div>
+
+    <script>
+        function initMap() {
+          var hospitalsData = {
+            DS_WHLNAT_ROKAHSPT_ADDR: {
+              list_total_count: 12,
+              row: [
+                {
+                  hspt_addr: "강원도 강릉시 주문진읍 동해대로 4371-34",
+                  hsptnm: "국군강릉병원",
+                  lngt: 128.8309,
+                  zipcd: "25422",
+                  ltd: 37.86871,
+                  hspt_cntadr: "033-662-7802",
+                },
+                {
+                  hspt_addr: "경기도 고양시 덕양구 혜음로 215 사서함 111-8호",
+                  hsptnm: "국군고양병원",
+                  lngt: 126.89697,
+                  zipcd: "10268",
+                  ltd: 37.71897,
+                  hspt_cntadr: "031-963-6657",
+                },
+                {
+                  hspt_addr: "경기도 구리시 인창2로 177",
+                  hsptnm: "국군구리병원",
+                  lngt: 127.12908,
+                  zipcd: "11913",
+                  ltd: 37.603848,
+                  hspt_cntadr: "031-331-1919",
+                },
+                {
+                  hspt_addr: "경북 경산시 하양읍 대경로 425-41",
+                  hsptnm: "국군대구병원",
+                  lngt: 128.78665,
+                  zipcd: "38427",
+                  ltd: 35.893456,
+                  hspt_cntadr: "053-750-1731",
+                },
+                {
+                  hspt_addr: "대전광역시 유성구 자운로 90번(자운동) 국군대전병원",
+                  hsptnm: "국군대전병원",
+                  lngt: 127.34652,
+                  zipcd: "34059",
+                  ltd: 36.4203,
+                  hspt_cntadr: "1688-9152",
+                },
+                {
+                  hspt_addr:
+                    "경기도 성남시 분당구 새마을로 177번길 81번지 사서함 99호",
+                  hsptnm: "국군수도병원",
+                  lngt: 127.15181,
+                  zipcd: "13574",
+                  ltd: 37.393917,
+                  hspt_cntadr: "1688-9151",
+                },
+                {
+                  hspt_addr: "경기도 양주시 은현면 화합로 사서함 94-12호",
+                  hsptnm: "국군양주병원",
+                  lngt: 127.03268,
+                  zipcd: "11506",
+                  ltd: 37.85673,
+                  hspt_cntadr: "1688-9163",
+                },
+                {
+                  hspt_addr: "강원도 춘천시 방고개길 57번",
+                  hsptnm: "국군춘천병원",
+                  lngt: 127.74614,
+                  zipcd: "24207",
+                  ltd: 37.92588,
+                  hspt_cntadr: "033-243-0130",
+                },
+                {
+                  hspt_addr: "경기도 포천시 화현면 화동로 564",
+                  hsptnm: "국군포천병원",
+                  lngt: 127.31033,
+                  zipcd: "11123",
+                  ltd: 37.91604,
+                  hspt_cntadr: "031-531-0803",
+                },
+                {
+                  hspt_addr: "전남 함평군 해보면 신해로 1027 국군함평병원",
+                  hsptnm: "국군함평병원",
+                  lngt: 126.63228,
+                  zipcd: "57716",
+                  ltd: 35.180008,
+                  hspt_cntadr: "1688-9153",
+                },
+                {
+                  hspt_addr: "강원도 홍천군 두촌면 아홉사리로 53",
+                  hsptnm: "국군홍천병원",
+                  lngt: 127.99749,
+                  zipcd: "25164",
+                  ltd: 37.803707,
+                  hspt_cntadr: "1688-9167",
+                },
+                {
+                  hspt_addr: "서울시 종로구 삼청로 10길 13번 국군서울지구병원",
+                  hsptnm: "서울지구병원",
+                  lngt: 126.98214,
+                  zipcd: "3050",
+                  ltd: 37.587826,
+                  hspt_cntadr: "02-748-1111",
+                },
+              ],
+            },
+          };
+  
+          var map = new google.maps.Map(document.getElementById("map"), {
+            center: { lat: 37.5, lng: 127.0 }, // 중심 지점 설정
+            scrollwheel: false,
+            zoom: 8, // 지도 확대 정도 설정
+          });
+  
+          var hospitals = hospitalsData["DS_WHLNAT_ROKAHSPT_ADDR"]["row"];
+          for (var i = 0; i < hospitals.length; i++) {
+            var hospital = hospitals[i];
+            var latLng = { lat: hospital.ltd, lng: hospital.lngt };
+            var marker = new google.maps.Marker({
+              position: latLng,
+              map: map,
+              title: hospital.hsptnm, // 마커에 마우스를 올렸을 때 표시될 타이틀
+            });
+          }
+        }
+      </script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCQZemHa2q-qMUW3dWL1_w_NshKMSnys48&callback=initMap" async
+        defer></script>
+
+</body>
+</html>

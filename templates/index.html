@@ -1,0 +1,31 @@
+{% load static %}
+
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'common.css' %}">
+</head>
+<body>
+    <div class="content">   
+
+        <div class="mid">
+            <strong>navigator</strong>
+            <div class="bot1">
+                <img src="{% static 'imgs/Chatbot.png' %}" alt="My Image" class="img1">
+                <a href="/chat">1대1 상담</a>
+            </div>
+            <div class="bot2">
+                <img src="{% static 'imgs/Magnifier.png' %}" alt="My Image" class="img2">
+                <a href="/test">우울증 자가진단</a>
+            </div>
+                
+            <div class="bot3">
+                <img src="{% static 'imgs/hospital.png' %}" alt="My Image" class="img3">
+                <a href="/hospitals">군 병원 찾기</a>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>어서와 군대는 처음이지?</title>
+    {% load static %}
+    <link href="{% static 'imgs/logo4.png' %}" rel="shortcut icon" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body class="sub3">
+<div class="container">
+    <header class="nomal">
+        <div class="header_wrap flex rel">
+            <div class="logo">
+                <a href="{% url 'index' %}" class="flex">
+                    <img src="{% static 'imgs/logo4.png' %}" alt="">
+                </a>
+            </div>
+            <nav class="abs">
+                <ul class="flex">
+                    <li class="main_menu">
+                        <a href="{% url 'sub1' %}">군부대위치</a>
+                    </li>
+                    <li class="main_menu">
+                        <a href="{% url 'sub2' %}">자격증</a>
+                    </li>
+                    <li class="main_menu">
+                        <a href="{% url 'sub3' %}">직업군인</a>
+                    </li>
+                    <li class="main_menu">
+                        <a href="{% url 'login' %}">로그인</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="content">
+        <section class="rel">
+            <img src="{% static 'imgs/bk1.png' %}" alt="img">
+        </section>
+        <p class="title">군인이 되기 위한 방법</p>
+        <section class="wrap">
+            <article class="way">
+                <img src="{% static 'imgs/image 7.png' %}" alt="">
+                <h1>직업 군인 준비 방법</h1>
+                <div>
+                    <h3>정규교육과정</h3>
+                    <p>특별히 요구되는 학력의 조건은 없지만, 장교가 되기 위해서는 사관학교에 입학하거나 대학교의 학군사관(ROTC) 또는 학사사관을 거쳐야 합니다.</p>
+                </div>
+                <div class="marker">
+                    <h3>입직 및 취업 방법</h3>
+                    <ul>
+                        <li><p>육군·해군·공군사관학교 졸업 또는 대학교의 학군사관 또는 학사사관을 거쳐 군인으로 일할 수 있습니다.</p> </li>
+                        <li><p>고등학교 졸업 이상의 학력자는 제3사관학교나 간부사관에 지원이 가능하고, 여군 장교는 사관학교, 학사사관, 간부사관 후보과정을 거치거나 간호사관학교를 통해 임관됩니다.</p></li>
+                    </ul>
+                </div>
+            </article>
+            <article class="agency">
+                <h1>관련기관</h1>
+                <ul>
+                    <li>
+                        <img src="{% static 'imgs/image.png' %}" alt="img">
+                        <span>육군사관 학교 </span>
+                        <a href="http://www.kma.ac.kr" target="_blank"> http://www.kma.ac.kr</a>
+                    </li>
+                    <li>
+                        <img src="{% static 'imgs/image.png' %}" alt="img">
+                        <span>공군사관 학교 </span>
+                        <a href="http://www.afa.ac.kr" target="_blank"> http://www.afa.ac.kr</a>
+                    </li>
+                    <li>
+                        <img src="{% static 'imgs/image.png' %}" alt="img">
+                        <span>해군사관 학교 </span>
+                        <a href="http://www.navy.ac.kr" target="_blank"> http://www.navy.ac.kr</a>
+                    </li>
+                    <li>
+                        <img src="{% static 'imgs/image.png' %}" alt="img">
+                        <span>국방부 </span>
+                        <a href="http://www.mnd.go.kr" target="_blank"> http://www.mnd.go.kr</a>
+                    </li>
+                </ul>
+            </article>
+        </section>
+        <p class="title">직업정보</p>
+        <section class="imformation">
+            <article>
+                <h3>관련 학과</h3>
+                <p>부사관과<br>군사학과</p>
+            </article>
+            <article>
+                <h3>핵심능력</h3>
+                <p>신체 운동 능력</p>
+            </article>
+            <article>
+                <h3>적성</h3>
+                <p>강인한 기초체력과 효율적 <br>으로 움직이는 신체<br>운동능력이 필요</p>
+            </article>
+            <article>
+                <h3>흥미</h3>
+                <p>규칙을 잘 따르고 통제된<br> 생활을 이겨낼 수 있는<br> 사람에게 적합</p>
+            </article>
+        </section>
+        <section>
+            <p class="title nodrag">계급별 병사봉급추이</p>
+            <img src="{% static 'imgs/pay.png' %}" alt="">
+        </section>
+    </div>
+</div>
+</body>
+</html>

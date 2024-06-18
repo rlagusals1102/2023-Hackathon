@@ -1,31 +1,121 @@
-{% load static %}
-
 <!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
-    <link rel="stylesheet" href="{% static 'common.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>어서와 군대는 처음이지?</title>
+    {% load static %}
+    <link href="{% static 'imgs/logo4.png' %}" rel="shortcut icon" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
-<body>
-    <div class="content">   
-
-        <div class="mid">
-            <strong>navigator</strong>
-            <div class="bot1">
-                <img src="{% static 'imgs/Chatbot.png' %}" alt="My Image" class="img1">
-                <a href="/chat">1대1 상담</a>
+<body class="index nodrag">
+<div class="container">
+    <header class="nomal">
+        <div class="header_wrap flex rel">
+            <div class="logo flex">
+                <a href="{% url 'index' %}" class="flex">
+                    <img src="{% static 'imgs/logo4.png' %}" alt="">
+                </a>
             </div>
-            <div class="bot2">
-                <img src="{% static 'imgs/Magnifier.png' %}" alt="My Image" class="img2">
-                <a href="/test">우울증 자가진단</a>
-            </div>
-                
-            <div class="bot3">
-                <img src="{% static 'imgs/hospital.png' %}" alt="My Image" class="img3">
-                <a href="/hospitals">군 병원 찾기</a>
-            </div>
+            <nav class="abs">
+                <ul class="flex">
+                    <li class="main_menu">
+                        <a href="{% url 'sub1' %}">군부대위치</a>
+                    </li>
+                    <li class="main_menu">
+                        <a href="{% url 'sub2' %}">자격증</a>
+                    </li>
+                    <li class="main_menu">
+                        <a href="{% url 'sub3' %}">직업군인</a>
+                    </li>
+                    <li class="main_menu">
+                        <a href="{% url 'login' %}">로그인</a>
+                    </li>
+                </ul>
+            </nav>
         </div>
-
+    </header>
+    <div class="visual_img rel">
+        <img src="{% static 'imgs/visual_img2.jpg' %}" alt="">
+        <div class="visual_img_content abs flex">
+            <p>입대/전역/제대</p>
+            <p class="nodrag">D-XX</p>
+        </div>
     </div>
+    <div class="content">
+        <section class="flex nodrag">
+            <article>
+                <div class="article_title">
+                    국군장병분들이 하는 일
+                </div>
+                <div class="article_content flex">
+                    <div class="cards flex">
+                        <div class="card_wrap flex rel">
+                            <div class="content_card flex">
+                                <img src="{% static 'imgs/공군.png' %}" alt="">
+                                <p class="card_title">공군</p>
+                                <p class="card_description">
+                                    전락적 억제<br>
+                                    작전식 신속대응<br>
+                                    결전방위<br>
+                                    남북 신뢰형성 및 평화구축지원<br>
+                                    의무복무의 가치 제고<br>
+                                    사회 경쟁력을 겸비한 간부 육성<br>
+                                    과학기술-산업-경제발전 기여
+                                </p>
+                            </div>
+                            <div class="content_card flex">
+                                <img src="{% static 'imgs/육군.png' %}" alt="">
+                                <p class="card_title">육군</p>
+                                <p class="card_description">
+                                    전쟁억제<br>
+                                    해양통제<br>
+                                    해상교통로<span id="eng">(SLOC : Sea Lane Of Communication)</span> 보호<br>
+                                    군사력 투사국가 <br>
+                                    대외정책 지원 및 국위 선양
+                                </p>
+                            </div>
+                            <div class="content_card flex">
+                                <img src="{% static 'imgs/해군.png' %}" alt="">
+                                <p class="card_title">해군</p>
+                                <p class="card_description">
+                                    적 징후 감시<br>
+                                    완벽한 전투준비태세 유지<br>
+                                    국지도발 대응태세 완비<br>
+                                    평화유지와 재난구조
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <div class="empty_content flex">
+                <p class="nodrag">마우스를 올려보세요!</p>
+            </div>
+            <article id="container">
+                <div class="content2 flex slide" style="background-image: url('{% static 'imgs/soilder1.jpg' %}');">
+                    <div class="title">군대는</div>
+                    <div class="description"><p>군대는 전쟁에 대비하여 전투 조직과 전투 지원 조직과
+                        이들을 구성하는 인력들과 장비와 병참과 훈련과 시설 등을 관리할 수
+                        있는 기구로 구성되며, 군대의 효율성은 이들 조직들이 얼마나 잘 활용되고 있는지에 따라 평가됩니다.
+                        통상 활동 영역에 따라 육군과 해군과 공군과 해병대 등으로 나뉩니다.</p>
+                    </div>
+                </div>
+            </article>
+            <article>
+                <div class="article_title">
+                    국군 군사 계급표
+                </div>
+                <div class="article_content content3 flex">
+                    <img src="{% static 'imgs/계급3.png' %}" alt="">
+                </div>
+            </article>
+        </section>
+    </div>
+    <footer>
+
+    </footer>
+</div>
+<script src="{% static 'script/script.js' %}"></script>
 </body>
 </html>

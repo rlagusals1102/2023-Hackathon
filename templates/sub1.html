@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>어서와 군대는 처음이지?</title>
+    {% load static %}
+    <link href="{% static 'imgs/logo4.png' %}" rel="shortcut icon" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body class="sub1">
+<div class="container">
+    <header class="nomal">
+        <div class="header_wrap flex rel">
+            <div class="logo">
+                <a href="{% url 'index' %}" class="flex">
+                    <img src="{% static 'imgs/logo4.png' %}" alt="">
+                </a>
+            </div>
+            <nav class="abs">
+                <ul class="flex">
+                    <li class="main_menu">
+                        <a href="{% url 'sub1' %}">군부대위치</a>
+                    </li>
+                    <li class="main_menu">
+                        <a href="{% url 'sub2' %}">자격증</a>
+                    </li>
+                    <li class="main_menu">
+                        <a href="{% url 'sub3' %}">직업군인</a>
+                    </li>
+                    <li class="main_menu">
+                        <a href="{% url 'login' %}">로그인</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="visual_img rel">
+        <img src="{% static 'imgs/bk.png' %}" alt="">
+    </div>
+    <div class="content flex">
+        <div class="section_title">
+            군부대 위치
+        </div>
+        <section>
+            <div class="input_content flex rel">
+                <div class="flex">
+                    <input type="text" class="search_input" placeholder="사단을 입력해주세요!">
+                    <button class="search_button">검색</button>
+                </div>
+                <ul class="result_list abs nodrag off_ul"></ul>
+            </div>
+            <div id="map"></div>
+        </section>
+    </div>
+</div>
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=7b35d714f9ff5817908ad4f8bd53e762"></script>
+<script src="{% static 'script/map.js' %}"></script>
+</body>
+</html>

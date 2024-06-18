@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>어서와 군대는 처음이지?</title>
+    {% load static %}
+    <link href="{% static 'imgs/logo4.png' %}" rel="shortcut icon" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body class="sub2">
+<div class="container">
+    <header class="nomal">
+        <div class="header_wrap flex rel">
+            <div class="logo">
+                <a href="{% url 'index' %}" class="flex">
+                    <img src="{% static 'imgs/logo4.png' %}" alt="">
+                </a>
+            </div>
+            <nav class="abs">
+                <ul class="flex">
+                    <li class="main_menu">
+                        <a href="{% url 'sub1' %}">군부대위치</a>
+                    </li>
+                    <li class="main_menu">
+                        <a href="{% url 'sub2' %}">자격증</a>
+                    </li>
+                    <li class="main_menu">
+                        <a href="{% url 'sub3' %}">직업군인</a>
+                    </li>
+                    <li class="main_menu">
+                        <a href="{% url 'login' %}">로그인</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="content">
+        <section class="img">
+            <img src="{% static 'imgs/Group 3.png' %}" alt="">
+        </section>
+        <section class="license flex">
+            <p class="title">자격증</p>
+            <div>
+                <a href="https://www.q-net.or.kr/crf005.do?id=crf00505&gSite=Q&jmCd=6293" target="_blank">
+                    <img src="{% static 'imgs/img 1.png' %}" alt="">
+                    <h3>항공장비정비기능사</h3>
+                    <span>항공기 관련 직업</span>
+                </a>
+                <a href="http://www.q-net.or.kr/crf005.do?id=crf00503&jmCd=7612" target="_blank">
+                    <img src="{% static 'imgs/img 2.png' %}" alt="">
+                    <h3>잠수기능사</h3>
+                    <span>잠구기능원, 산업잠수사</span>
+                </a>
+                <a href="http://www.q-net.or.kr/crf005.do?id=crf00503&jmCd=6040" target="_blank">
+                    <img src="{% static 'imgs/img 3.png' %}" alt="">
+                    <h3>연삭기능사</h3>
+                    <span>조립금속제품 제조업체, 1차 금속제품 제조업체, 각종 기계제조업체</span>
+                </a>
+                <a href="http://www.q-net.or.kr/crf005.do?id=crf00503&jmCd=6420" target="_blank">
+                    <img src="{% static 'imgs/img_4.png' %}" alt="">
+                    <h3>열처리기능사</h3>
+                    <span>제철소, 제련소, 금속기계제조업체</span>
+                </a>
+            </div>
+            <div>
+                <a href="https://www.q-net.or.kr/crf005.do?id=crf00505&jmCd=7761" target="_blank">
+                    <img src="{% static 'imgs/img 5.png' %}" alt="">
+                    <h3>에너지관리기능사</h3>
+                    <span>건물설비관리업체 및 생산관리업체</span>
+                </a>
+                <a href="https://www.q-net.or.kr/crf005.do?id=crf00505&gSite=Q&jmCd=7780" target="_blank">
+                    <img src="{% static 'imgs/img 6.png' %}" alt="">
+                    <h3>전기기능사</h3>
+                    <span>전기직 공무원 및 제철소, 제련소, 금속기계제조업체</span>
+                </a>
+                <a href="https://www.q-net.or.kr/crf005.do?id=crf00505&gSite=Q&jmCd=7911" target="_blank">
+                    <img src="{% static 'imgs/img 7.png' %}" alt="">
+                    <h3>양식조리기능사</h3>
+                    <span>요식업계</span>
+                </a>
+                <a href="http://www.q-net.or.kr/crf005.do?id=crf00503&jmCd=6175" target="_blank">
+                    <img src="{% static 'imgs/img8.png' %}" alt="">
+                    <h3>판금제관기능사</h3>
+                    <span>전자제품, 보일러 관련 제품 제조업체와 자동차, 선박, 수송장비 제조 및 수선업체, 건축설비업체</span>
+                </a>
+            </div>
+    </div>
+</div>
+<script src="{% static 'script/license.js' %}"></script>
+</body>
+</html>

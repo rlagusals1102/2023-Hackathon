@@ -30,7 +30,7 @@ MIDDLEWARE = [
     'django.middleware.csrf.CsrfViewMiddleware',  # CSRF 방지
     'django.contrib.auth.middleware.AuthenticationMiddleware',  # 인증
     'django.contrib.messages.middleware.MessageMiddleware',  # 메시지
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',  # 클릭재킹 방지
+
 ]
 
 ROOT_URLCONF = 'military_project.urls'
